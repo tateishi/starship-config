@@ -1,16 +1,36 @@
 # ~/.config/starship.toml
 
 add_newline = true
-format = """
-$all
-$character"""
+format = "$all$character"
+
+[username]
+style_user = "bold green"
+style_root = "bold red"
+format = "[$user]($style)"
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "@[$hostname](bold yellow) "
 
 [directory]
-style = "bold cyan"
-truncation_length = 4
-truncate_to_repo = true
+# 省略（truncation）を無効化：パス要素を切らない
+truncation_length = 0
+truncation_symbol = ""
+
+# Git リポジトリ単位での短縮を無効化（これが原因で「カレントだけ」っぽくなることがある）
+truncate_to_repo = false
+
+# fish 風の短縮を無効化（1文字化などを防ぐ）
+fish_style_pwd_dir_length = 0
+
 read_only = " "
 home_symbol = "~"
+
+style = "bold cyan"
+# 見た目（必要なら）
+format = "[$path]($style) "
+
 
 [git_branch]
 symbol = " "
