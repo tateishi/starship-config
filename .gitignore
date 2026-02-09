@@ -4,6 +4,7 @@ Thumbs.db
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
+*.swp
 
 # Dependencies
 node_modules/
