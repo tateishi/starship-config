@@ -2,7 +2,7 @@
 
 add_newline = true
 format = """
-$directory$git_branch$git_status$nodejs$python$rust$golang
+$all
 $character"""
 
 [directory]
