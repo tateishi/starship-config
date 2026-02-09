@@ -1,17 +1,19 @@
 # ~/.config/starship.toml
 
 add_newline = true
-format = "$all$character"
+#format = "$all$character"
+format = """$username$hostname$directory$git_status$time
+$character"""
 
 [username]
 style_user = "bold green"
 style_root = "bold red"
-format = "[$user]($style)"
+format = " [$user]($style) "
 show_always = true
 
 [hostname]
 ssh_only = false
-format = "@[$hostname](bold yellow) "
+format = "  [$hostname](bold yellow) "
 
 [directory]
 # 省略（truncation）を無効化：パス要素を切らない
@@ -25,12 +27,20 @@ truncate_to_repo = false
 fish_style_pwd_dir_length = 0
 
 read_only = " "
-home_symbol = "~"
+home_symbol = "󰉋 ~"
 
 style = "bold cyan"
 # 見た目（必要なら）
 format = "[$path]($style) "
 
+
+[time]
+disabled = false
+format = " $time(blue bold)"
+time_format = "🕒 %H:%M"
+
+[battery]
+disabled = false
 
 [git_branch]
 symbol = " "
