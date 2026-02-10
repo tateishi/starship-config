@@ -2,7 +2,7 @@
 
 add_newline = true
 #format = "$all$character"
-format = """$sudo$status$username$hostname$directory$git_branch$git_status\
+format = """$battery$memory_usage$sudo$status$username$hostname$directory$git_branch$git_status\
 $c\
 $haskell\
 $lisp\
@@ -11,8 +11,6 @@ $python\
 $rust\
 $package\
 $time\
-$battery\
-$memory_usage\
 $os
 $character"""
 
