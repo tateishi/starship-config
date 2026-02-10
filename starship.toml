@@ -2,7 +2,7 @@
 
 add_newline = true
 #format = "$all$character"
-format = """$username$hostname$directory$git_branch$git_status\
+format = """$sudo$status$username$hostname$directory$git_branch$git_status\
 $c\
 $haskell\
 $lisp\
@@ -13,6 +13,13 @@ $time\
 $battery\
 $memory_usage
 $character"""
+
+[sudo]
+disabled = false
+
+[status]
+disabled = false
+format = "[$symbol$common_meaning $int $signal_name$maybe_int]($style)"
 
 [username]
 style_user = "bold green"
