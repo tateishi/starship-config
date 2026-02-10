@@ -2,7 +2,16 @@
 
 add_newline = true
 #format = "$all$character"
-format = """$username$hostname$directory$git_status$time
+format = """$username$hostname$directory$git_branch$git_status\
+$c\
+$haskell\
+$lisp\
+$nodejs\
+$python\
+$rust\
+$time\
+$battery\
+$memory_usage
 $character"""
 
 [username]
@@ -45,11 +54,11 @@ disabled = false
 [git_branch]
 symbol = " "
 style = "bold purple"
-format = "$symbol$branch "
+format = "[$symbol$branch]($style) "
 
 [git_status]
 style = "bold yellow"
-format = "($all_status$ahead_behind) "
+format = "[$all_status$ahead_behind](style) "
 conflicted = " "
 ahead = "⇡${count}"
 behind = "⇣${count}"
