@@ -9,6 +9,7 @@ $lisp\
 $nodejs\
 $python\
 $rust\
+$package\
 $time\
 $battery\
 $memory_usage\
