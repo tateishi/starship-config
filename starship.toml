@@ -11,7 +11,8 @@ $python\
 $rust\
 $time\
 $battery\
-$memory_usage
+$memory_usage\
+$os
 $character"""
 
 [sudo]
@@ -20,6 +21,10 @@ disabled = false
 [status]
 disabled = false
 format = "[$symbol$common_meaning $int $signal_name$maybe_int]($style)"
+
+[os]
+disabled = false
+format = " [$symbol$name]($style)"
 
 [username]
 style_user = "bold green"
