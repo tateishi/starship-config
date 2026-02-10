@@ -24,7 +24,7 @@ format = "[$symbol$common_meaning $int $signal_name$maybe_int]($style)"
 
 [os]
 disabled = false
-format = " [$symbol$name$version]($style)"
+format = " [$symbol$name]($style)"
 
 [os.symbols]
 Ubuntu = " "
