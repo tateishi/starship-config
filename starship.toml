@@ -24,7 +24,11 @@ format = "[$symbol$common_meaning $int $signal_name$maybe_int]($style)"
 
 [os]
 disabled = false
-format = " [$symbol$name]($style)"
+format = " [$symbol$name$version]($style)"
+
+[os.symbols]
+Ubuntu = " "
+Windows = " "
 
 [username]
 style_user = "bold green"
@@ -54,11 +58,10 @@ style = "bold cyan"
 # 見た目（必要なら）
 format = "[$path]($style) "
 
-
 [time]
 disabled = false
 format = " $time(blue bold)"
-time_format = "🕒 %H:%M"
+time_format = " %H:%M"
 
 [battery]
 disabled = false
