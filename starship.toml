@@ -92,19 +92,20 @@ error_symbol = "❯"
 [env_var.pwsh_version]
 variable = "STARSHIP_POWERSHELL_VERSION"
 # お好みでアイコンを変更（ は Nerd Font の PowerShell アイコン）
-format = " PS $env_value "
+format = "[ PS $env_value]($style) "
 style = "blue bold"
 disabled = false
 
 # 種別も表示（ps5 / ps7）。省略したい場合はこのブロックは不要。
 [env_var.pwsh_kind]
 variable = "STARSHIP_POWERSHELL_KIND"
-format = " $env_value($style)"
+format = " [$env_value]($style) "
+style = "blue bold"
 disabled = false
 
 # OS ファミリー（Windows 10 / 11）を表示
 [env_var.winver]
 variable = "STARSHIP_WINDOWS_FAMILY"
-format = "$env_value($style)"
-style = "bold magenta"
+format = "[$env_value]($style) "
+style = "white bold"
 disabled = false
