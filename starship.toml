@@ -2,7 +2,8 @@
 
 add_newline = true
 #format = "$all$character"
-format = """$battery$memory_usage$sudo$status$username$hostname$directory$git_branch$git_status\
+format = """\
+$battery$memory_usage$sudo$status$username$hostname$directory$git_branch$git_status\
 $c\
 $haskell\
 $lisp\
@@ -11,7 +12,9 @@ $python\
 $rust\
 $package\
 $time\
-$os
+$os\
+${env_var.winver} \
+${env_var.pwsh_kind}
 $character"""
 
 [sudo]
@@ -23,7 +26,7 @@ format = "[$symbol$common_meaning $int $signal_name$maybe_int]($style)"
 
 [os]
 disabled = false
-format = " [$symbol$name]($style)"
+format = " [$symbol$name]($style) "
 
 [os.symbols]
 Ubuntu = " "
@@ -84,3 +87,24 @@ untracked = "?${count}"
 [character]
 success_symbol = "❯"
 error_symbol = "❯"
+
+# PowerShell のバージョンを表示（色: 青太字）
+[env_var.pwsh_version]
+variable = "STARSHIP_POWERSHELL_VERSION"
+# お好みでアイコンを変更（ は Nerd Font の PowerShell アイコン）
+format = " PS $env_value "
+style = "blue bold"
+disabled = false
+
+# 種別も表示（ps5 / ps7）。省略したい場合はこのブロックは不要。
+[env_var.pwsh_kind]
+variable = "STARSHIP_POWERSHELL_KIND"
+format = " $env_value($style)"
+disabled = false
+
+# OS ファミリー（Windows 10 / 11）を表示
+[env_var.winver]
+variable = "STARSHIP_WINDOWS_FAMILY"
+format = "$env_value($style)"
+style = "bold magenta"
+disabled = false
